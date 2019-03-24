@@ -5,10 +5,10 @@ if ($base_connect)
 {
     $order = $_POST['order'];
 
- 
-    $stmt = $query ->query("SELECT * from photo_desc WHERE category like '$order' AND visibility = 1 ORDER BY 'sequence'");
-    
-    
+    $stmt = $query -> prepare('SELECT * from photo_desc WHERE category like :order AND visibility = 1 ORDER BY sequence');
+    $stmt -> bindValue(':order', $order, PDO::PARAM_STR);
+    $stmt -> execute();
+     
     if($stmt)
     {
         $arrayName = array();
