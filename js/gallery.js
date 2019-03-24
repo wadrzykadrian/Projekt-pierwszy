@@ -16,8 +16,8 @@ $(document).ready(function () {
   document.getElementById("order").addEventListener("change", function () {
     removeIMG();
     this.setAttribute("disabled", "disabled");
-    var value = this.value;
-    getPhoto(value, limit);
+    var category = this.value;
+    getPhoto(category, limit);
     this.removeAttribute("disabled");
     check();
   })
@@ -59,9 +59,7 @@ $(document).ready(function () {
       photo[i].style.display = "block";
       photo[i].setAttribute("data-visible", "true");
     }
-
     check();
-
   }
 
   function check() {
@@ -85,17 +83,16 @@ $(document).ready(function () {
   function removeIMG() {
 
     var photo = document.getElementsByClassName("photo");
-    var contener = document.querySelector(".photo_conteiner");
+    var photo_conteiner = document.querySelector(".photo_conteiner");
 
     for (var i = photo.length; i > 0; i--) {
-      contener.removeChild(photo[0]);
+      photo_conteiner.removeChild(photo[0]);
 
     }
   }
 
-
   function createIMG(Data, i) {
-    var gallery = document.querySelector(".photo_conteiner");
+    var photo_conteiner = document.querySelector(".photo_conteiner");
     var el = document.createElement("a");
     var src = "photo/" + Data[i].src;
     el.setAttribute("href", src);
@@ -103,9 +100,7 @@ $(document).ready(function () {
     el.setAttribute("category", Data[i].category);
     el.className = "photo";
     el.style.backgroundImage = "url(" + src + ")";
-    gallery.appendChild(el);
+    photo_conteiner.appendChild(el);
     return el;
   }
 });
-
-

@@ -38,8 +38,8 @@
     
     
       <select name="order" id="order" class="order">
-		    <option value="Kategoria1">Kategoria1</option>
-		    <option value="Kategoria2">Kategoria2</option>
+		    <option value="chair">Krzesła</option>
+		    <option value="table">Stoły</option>
         <option value="%" selected>Wszystkie</option>
 		  </select>
 
