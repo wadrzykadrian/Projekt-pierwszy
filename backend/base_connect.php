@@ -5,4 +5,7 @@
     } catch(PDOException $e){
         $base_connect = false;
     }
+// hasło do zdalnego -> baza testowa
 ?>
+
+
